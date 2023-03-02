@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\InternshipTask\\bin\\Debug",
+    "\\Task",
+    "\\TaskKevin\\Properties",
+    "\\Task\\Data",
+    "\\Task\\Pages",
+    "\\Task\\Views",
+    "\\Task\\Views\\Shared",
+    "\\Task\\wwwroot\\css",
+    "\\Task\\wwwroot\\js"
+  ],
+  "SelectedNode": "\\Task\\Data\\ApplicationDbContext.cs",
+  "PreviewInSolutionExplorer": false
+}

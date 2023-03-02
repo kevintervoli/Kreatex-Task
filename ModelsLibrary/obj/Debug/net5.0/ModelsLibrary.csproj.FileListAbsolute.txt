@@ -1,0 +1,12 @@
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\bin\Debug\net5.0\ModelsLibrary.deps.json
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\bin\Debug\net5.0\ModelsLibrary.dll
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\bin\Debug\net5.0\ref\ModelsLibrary.dll
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\bin\Debug\net5.0\ModelsLibrary.pdb
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\obj\Debug\net5.0\ModelsLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\obj\Debug\net5.0\ModelsLibrary.AssemblyInfoInputs.cache
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\obj\Debug\net5.0\ModelsLibrary.AssemblyInfo.cs
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\obj\Debug\net5.0\ModelsLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\obj\Debug\net5.0\ModelsLibrary.dll
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\obj\Debug\net5.0\ref\ModelsLibrary.dll
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\obj\Debug\net5.0\ModelsLibrary.pdb
+C:\Users\Kev\Desktop\.NET\ModelsLibrary\obj\Debug\net5.0\ModelsLibrary.csproj.AssemblyReference.cache
