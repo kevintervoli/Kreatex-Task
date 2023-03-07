@@ -12,6 +12,7 @@ namespace ModelsLibrary.Interfaces
         IEnumerable<Projects> GetItems();
         Projects GetItem(string project);
         bool UserExists(string project);
-
+        void InsertProjects(Projects project);
+        public void DeleteProject(Projects project);
     }
 }

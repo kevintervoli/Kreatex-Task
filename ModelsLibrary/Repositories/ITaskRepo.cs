@@ -30,5 +30,15 @@ namespace ModelsLibrary.Repositories
             bool exists = context.taskTable.Any(u => u.taskName.Equals(task));
             return exists;
         }
+        public void InsertTask(Task task)
+        {
+            var context = new AppDbContext();
+            context.taskTable.Add(task);
+        }
+        public void DeleteTask(Task task)
+        {
+            var context = new AppDbContext();
+            context.taskTable.Remove(task);
+        }
     }
 }

@@ -30,5 +30,15 @@ namespace ModelsLibrary.Repositories
             bool exists = context.projectsTable.Any(u => u.projectName.Equals(project));
             return exists;
         }
+        public void InsertProjects(Projects project)
+        {
+            var context = new AppDbContext();
+            context.projectsTable.Add(project);
+        }
+        public void DeleteProject(Projects project)
+        {
+            var context = new AppDbContext();
+            context.projectsTable.Remove(project);
+        }
     }
 }

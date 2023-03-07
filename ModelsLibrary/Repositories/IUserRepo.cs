@@ -47,5 +47,16 @@ namespace TaskKevin.ModelsLibrary.Repositories
             bool exists = context.userTable.Any(u => u.username == username);
             return exists;
         }
+
+        public void InsertUser(User user)
+        {
+            var context = new AppDbContext();
+            context.userTable.Add(user);
+        }
+        public void DeleteUser(User user)
+        {
+            var context = new AppDbContext();
+            context.userTable.Remove(user);
+        }
     }
 }

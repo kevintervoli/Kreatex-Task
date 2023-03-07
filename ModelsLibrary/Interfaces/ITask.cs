@@ -11,5 +11,7 @@ namespace ModelsLibrary.Interfaces
         IEnumerable<Task> GetTaskData();
         IEnumerable<Task> GetSpecificTask(string taskName);
         bool TaskExist(string task);
+        void InsertTask(Task task);
+        public void DeleteTask(Task task);
     }
 }

@@ -12,6 +12,7 @@ namespace ModelsLibrary.Interfaces
         IEnumerable<User> GetItems();
         UserViewModel GetItem(string username);
         bool UserExists(string username);
-
+        void InsertUser(User user);
+        public void DeleteUser(User user);
     }
 }

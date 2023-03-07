@@ -24,5 +24,15 @@ namespace ModelsLibrary.Repositories
             bool exists = context.rolesTable.Any(u => u.RoleName.Equals(role));
             return exists;
         }
+        public void InsertRole(Roles role)
+        {
+            var context = new AppDbContext();
+            context.rolesTable.Add(role);
+        }
+        public void DeleteRole(Roles role)
+        {
+            var context = new AppDbContext();
+            context.rolesTable.Remove(role);
+        }
     }
 }

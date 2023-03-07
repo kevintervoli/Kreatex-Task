@@ -10,5 +10,7 @@ namespace ModelsLibrary.Interfaces
     {
         IEnumerable<Roles> GetRoleData();
         bool TaskRoleExist(string task);
+        void InsertRole(Roles roles);
+        public void DeleteRole(Roles role);
     }
 }
