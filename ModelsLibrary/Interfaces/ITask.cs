@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using TaskKevin.ModelsLibrary.Data.Model;
 
 namespace ModelsLibrary.Interfaces
 {
-    interface UserInterface
+    interface ITask
     {
-        IEnumerable<User> GetItems();
-        MyModel GetItem(string username);
-        bool UserExists(string username);
-
+        IEnumerable<Task> GetTaskData();
+        IEnumerable<Task> GetSpecificTask(string taskName);
+        bool TaskExist(string task);
     }
 }

@@ -8,7 +8,7 @@ using TaskKevin.ModelsLibrary.Data.Model;
 
 namespace TaskKevin.ModelsLibrary.Repositories
 {
-    public class InMemUserRepository : UserInterface
+    public class IUserRepo : IUser
     {
         private List<User> userList = new List<User>();
         public IEnumerable<User> GetItems()
@@ -18,7 +18,7 @@ namespace TaskKevin.ModelsLibrary.Repositories
             return userList;
 
         }
-        public MyModel GetItem(string username)
+        public UserViewModel GetItem(string username)
         {
             var context = new AppDbContext();
             User user = context.userTable
@@ -35,7 +35,7 @@ namespace TaskKevin.ModelsLibrary.Repositories
                     role = ur.Role
                 })
                 .FirstOrDefault();
-            MyModel us = new MyModel();
+            UserViewModel us = new UserViewModel();
             us.username = user.username;
             us.password = user.password;
             us.roleName = user.role.RoleName;

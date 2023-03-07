@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TaskKevin.ModelsLibrary.Data.Model
 {
-    public class MyModel
+    public class UserViewModel
     {
         public string username { get; set; }
         public string password { get; set; }

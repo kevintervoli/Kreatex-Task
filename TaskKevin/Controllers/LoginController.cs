@@ -17,14 +17,14 @@ namespace TaskKevin.Controllers
         public string password;
         public string role;
         private IConfiguration _config;
-        private readonly InMemUserRepository repository;
+        private readonly IUserRepo repository;
         public LoginController(IConfiguration config)
         {
             _config = config;
-            repository = new InMemUserRepository();
+            repository = new IUserRepo();
         }
         [HttpPost("api/login")]
-        public IActionResult Login([FromBody] MyModel mymodel)
+        public IActionResult Login([FromBody] UserViewModel mymodel)
         {
         
             if (repository.UserExists(mymodel.username))
@@ -37,7 +37,7 @@ namespace TaskKevin.Controllers
             return NotFound("User not found");
         }
 
-        private string Generate(MyModel model)
+        private string Generate(UserViewModel model)
         {
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

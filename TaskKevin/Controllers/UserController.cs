@@ -15,10 +15,10 @@ namespace TaskKevin.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly InMemUserRepository repository;
-        public UserController()
+        public IUserRepo _repository;
+        public UserController(IUserRepo repository)
         {
-            repository = new InMemUserRepository();
+            _repository = repository;
         }
         [HttpGet("admin")]
         [Authorize(Roles= "admin")]
@@ -50,16 +50,16 @@ namespace TaskKevin.Controllers
         [HttpGet("AllUsers")]
         public IEnumerable<User> GetUsers()
         {
-            var users = repository.GetItems();
+            var users = _repository.GetItems();
             return users;
         }
-        public MyModel GetCurrentUser()
+        public UserViewModel GetCurrentUser()
         {
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if(identity != null)
             {
                 var userClaims = identity.Claims;
-                return new MyModel
+                return new UserViewModel
                 {
                     username = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
                     password = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
