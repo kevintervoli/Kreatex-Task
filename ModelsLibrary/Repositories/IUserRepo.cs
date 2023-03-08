@@ -16,7 +16,6 @@ namespace TaskKevin.ModelsLibrary.Repositories
             var context = new AppDbContext();
             userList = context.userTable.ToList();
             return userList;
-
         }
         public UserViewModel GetItem(string username)
         {
