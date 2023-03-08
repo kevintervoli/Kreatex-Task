@@ -13,9 +13,6 @@ namespace TaskKevin.Controllers
 {
     public class LoginController : Controller
     {
-        public string username;
-        public string password;
-        public string role;
         private IConfiguration _config;
         private readonly IUserRepo repository;
         public LoginController(IConfiguration config)
