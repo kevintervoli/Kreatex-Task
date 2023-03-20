@@ -1,4 +1,6 @@
-﻿using ModelsLibrary.Interfaces;
+﻿using AutoMapper;
+using ModelsLibrary.Data.Model.ViewModel;
+using ModelsLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +10,19 @@ using TaskKevin.ModelsLibrary.Data.Model;
 
 namespace ModelsLibrary.Repositories
 {
-    class IProjectRepo : IProject
+    public class ProjectRepo : IProject
     {
-        public Projects GetItem(string project)
+        private readonly IMapper _mapper;
+        public ProjectRepo(IMapper mapper) {
+            _mapper = mapper;
+        }
+
+        public ProjectViewModel GetItem(string project)
         {
             var context = new AppDbContext();
             Projects projectData = context.projectsTable.FirstOrDefault(t =>t.projectName.Equals(project));
-            return projectData;
+            ProjectViewModel projectvm = _mapper.Map<ProjectViewModel>(projectData);
+            return projectvm;
         }
 
         public IEnumerable<Projects> GetItems()
@@ -24,7 +32,7 @@ namespace ModelsLibrary.Repositories
             return projectList;
         }
 
-        public bool UserExists(string project)
+        public bool ProjectExists(string project)
         {
             var context = new AppDbContext();
             bool exists = context.projectsTable.Any(u => u.projectName.Equals(project));

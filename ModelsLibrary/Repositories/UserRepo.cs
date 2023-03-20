@@ -8,7 +8,7 @@ using TaskKevin.ModelsLibrary.Data.Model;
 
 namespace TaskKevin.ModelsLibrary.Repositories
 {
-    public class IUserRepo : IUser
+    public class UserRepo : IUser
     {
         private List<User> userList = new List<User>();
         public IEnumerable<User> GetItems()

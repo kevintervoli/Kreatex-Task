@@ -7,8 +7,8 @@ namespace TaskKevin.Controllers
 {
     public class UserDataController : ControllerBase
     {
-        private readonly IUserRepo repository;
-        public UserDataController(IUserRepo _repository)
+        private readonly UserRepo repository;
+        public UserDataController(UserRepo _repository)
         {
             repository = _repository;
         }
@@ -25,7 +25,7 @@ namespace TaskKevin.Controllers
         [HttpDelete("User/delete")]
         public IActionResult deleteUser(User user)
         {
-            if (repository.UserExists(user.username))
+            if (!repository.UserExists(user.username))
             {
                 return NotFound("User does not exist in the database");
             }

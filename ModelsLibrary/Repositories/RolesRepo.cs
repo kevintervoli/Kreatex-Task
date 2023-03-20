@@ -8,7 +8,7 @@ using TaskKevin.ModelsLibrary.Data.Model;
 
 namespace ModelsLibrary.Repositories
 {
-    class IRolesRepo : IRoles
+    class RolesRepo : IRoles
     {
 
         public IEnumerable<Roles> GetRoleData()

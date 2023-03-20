@@ -14,11 +14,11 @@ namespace TaskKevin.Controllers
     public class LoginController : Controller
     {
         private IConfiguration _config;
-        private readonly IUserRepo repository;
+        private readonly UserRepo repository;
         public LoginController(IConfiguration config)
         {
             _config = config;
-            repository = new IUserRepo();
+            repository = new UserRepo();
         }
         [HttpPost("api/login")]
         public IActionResult Login([FromBody] UserViewModel mymodel)

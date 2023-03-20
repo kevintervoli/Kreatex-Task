@@ -1,4 +1,6 @@
-﻿using ModelsLibrary.Interfaces;
+﻿using AutoMapper;
+using ModelsLibrary.Data.ViewModel;
+using ModelsLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +9,20 @@ using TaskKevin.ModelsLibrary.Data.Model;
 
 namespace ModelsLibrary.Repositories
 {
-    class ITaskRepo : ITask
+    public class TaskRepo : ITask
     {
         private List<Task> taskList = new List<Task>();
-        public IEnumerable<Task> GetSpecificTask(string tname)
+        private readonly IMapper _mapper;
+        public TaskRepo(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
+        public TaskViewModel GetSpecificTask(string tname)
         {
             var context = new AppDbContext();
-            var task = context.taskTable.FirstOrDefault(t => t.taskName.Equals(tname));
-            return (IEnumerable<Task>)task;
+            Task task = context.taskTable.FirstOrDefault(t => t.taskName.Equals(tname));
+            TaskViewModel taskvm = _mapper.Map<TaskViewModel>(task);
+            return taskvm;
         }
 
         public IEnumerable<Task> GetTaskData()
@@ -40,5 +48,6 @@ namespace ModelsLibrary.Repositories
             var context = new AppDbContext();
             context.taskTable.Remove(task);
         }
+
     }
 }

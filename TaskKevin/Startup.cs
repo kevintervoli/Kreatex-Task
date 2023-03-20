@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.Text;
 using TaskKevin.ModelsLibrary.Data.Model;
 
@@ -42,6 +43,7 @@ namespace TaskKevin
             services.AddRazorPages();
             services.AddControllers();
             services.AddDbContext<AppDbContext>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TaskKevin", Version = "v1" });

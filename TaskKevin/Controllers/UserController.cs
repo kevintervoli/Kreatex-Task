@@ -15,8 +15,8 @@ namespace TaskKevin.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        public IUserRepo _repository;
-        public UserController(IUserRepo repository)
+        public UserRepo _repository;
+        public UserController(UserRepo repository)
         {
             _repository = repository;
         }
